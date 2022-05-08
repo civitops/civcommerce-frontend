@@ -44,7 +44,7 @@ const Home = () => {
     >
       <Search/>
       <div className='row'>
-        <div className='col-md-6 '></div>
+        <div className='col-md-2'></div>
         <div className='col-md-9'>
           <h2 className='mb-5'>New Arrivals</h2>
           <div className='row row-md-4'>
