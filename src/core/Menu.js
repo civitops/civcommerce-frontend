@@ -39,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    backgroundColor:"red"
   },
   title: {
     [theme.breakpoints.up('sm')]: {
@@ -98,6 +99,9 @@ const useStyles = makeStyles((theme) => ({
     "&:hover, &.Mui-focusVisible": { backgroundColor: "#010d0f" },
     borderRadius:"0%",
   },
+  menuPaper: {
+    color: "red"
+  }
 }));
 
 const MaterialAppBar = ({ history }) => {
@@ -135,6 +139,7 @@ const MaterialAppBar = ({ history }) => {
       transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       open={isMenuOpen}
       onClose={handleMenuClose}
+      
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
@@ -255,7 +260,7 @@ const MaterialAppBar = ({ history }) => {
 
   return (
     <div className={classes.grow}>
-      <AppBar position='fixed'>
+      <AppBar position='fixed' >
         <Toolbar>
           <a href='/' style={{ color: '#ffffff' }}>
             <IconButton

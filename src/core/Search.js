@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tField: {
     width: 800,
-    marginTop: 2,
+    
   },
   root: {
     '& > *': {
@@ -117,16 +117,14 @@ const Search = () => {
         <div className='input-group input-group-lg'>
           <div className='input-group-prepend'>
             <FormControl className={classes.formControl}>
-              <InputLabel id='demo-simple-select-helper-label'>
-                Select
-              </InputLabel>
               <Select
                 labelId='demo-simple-select-placeholder-label-label'
                 id='demo-simple-select-placeholder-label'
-                value={data.name}
+                value="All"
                 onChange={handleChange('category')}
                 displayEmpty
-                className={classes.selectEmpty}
+                variant="outlined"
+                
               >
                 <MenuItem value='All'>
                   <em>All</em>

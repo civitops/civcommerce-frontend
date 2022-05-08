@@ -10,9 +10,7 @@ const Layout = ({
 }) => (
   <div>
     <Menu />
-    <div className='jumbotron mt-5'>
-      <h2>{title}</h2>
-      <p className='lead'>{description.substring(0,60)+'...'}</p>
+    <div className='jumbotronh mt-5'>
     </div>
     <div className={className}>{children}</div>
   </div>

@@ -33,8 +33,8 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(4),
   },
   cardGrid: {
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4),
+    paddingTop: theme.spacing(1),
+    paddingBottom: theme.spacing(1),
   },
   card: {
     height: '100%',
@@ -48,7 +48,10 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   productDescription: {
-    height: '100px',
+    height: '4rem',
+  },
+  productDetails:{
+    height:'2rem'
   },
   footer: {
     backgroundColor: theme.palette.background.paper,
@@ -94,7 +97,7 @@ const Card = ({
   const showAddToCartBtn = (showAddToCartButton) => {
     return (
       showAddToCartButton && (
-        <Button onClick={addToCart} variant='outlined' color='secondary'>
+        <Button onClick={addToCart} variant="contained" color='danger'>
           Add to cart
         </Button>
       )
@@ -159,36 +162,10 @@ const Card = ({
   const classes = useStyles();
 
   return (
-    // <div className='card'>
-    //   <div className='card-header name'>{product.name}</div>
-    //   <div className='card-body'>
-    //     {shouldRedirect(redirect)}
-    //     <ShowImage item={product} url='product' />
-    //     <p className='lead mt-2'>{product.description.substring(0, 100)}</p>
-    //     <p className='black-10'>${product.price}</p>
-    //     <p className='black-9'>
-    //       Category: {product.category && product.category.name}
-    //     </p>
-    //     <p className='black-8'>
-    //       Added on {moment(product.createdAt).fromNow()}
-    //     </p>
-
-    //     {showStock(product.quantity)}
-    //     <br></br>
-
-    //     {showViewButton(showViewProductButton)}
-
-    //     {showAddToCartBtn(showAddToCartButton)}
-
-    //     {showRemoveButton(showRemoveProductButton)}
-
-    //     {showCartUpdateOptions(cartUpdate)}
-    //   </div>
-    // </div>
-
+    
     <Container className={classes.cardGrid} maxWidth='md'>
       <CssBaseline />
-      <Grid container spacing={2}>
+      <Grid container spacing={1}>
         <Grid item xs={12} sm={12} md={12}>
           <CardM className={classes.card}>
             {shouldRedirect(redirect)}
@@ -197,14 +174,13 @@ const Card = ({
               <Typography gutterBottom variant='h5' component='h2'>
                 {product.name}
               </Typography>
-              <Typography className={classes.productDescription}>{product.description.substring(0, 100)}</Typography>
-              <p className='black-10'>Price: ${product.price}</p>
-              <p className='black-9'>
-                Category: {product.category && product.category.name}{' '}
-              </p>{' '}
-              <p className='black-8'>
-                Added on {moment(product.createdAt).fromNow()}{' '}
-              </p>
+              <Typography className={classes.productDescription}>{product.description.substring(0, 50)}</Typography>
+              
+              <Typography className={classes.productDetails}>Price: ${product.price}</Typography>
+              <Typography className={classes.productDetails}>
+               {product.category && product.category.name}{' '}
+              </Typography>{' '}
+              
               {showStock(product.quantity)}
               <br></br>
               <span>
